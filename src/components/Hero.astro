@@ -1,0 +1,43 @@
+<!-- Hero Section -->
+<section id="hero">
+    <!-- Flex Containeer -->
+    <div class="container flex flex-col-reverse md:flex-row items-center px-6 mx-auto mt-10 space-y-0 md:space-y-0">
+        <!-- Left item -->
+        <div class="flex flex-col mb-32 space-y-12 md:w-1/2">
+            <h1 class="max-width text-4xl font-bold text-center md:text-5xl md:text-left">
+                Hi, I am <span id="spin" class="text-indigo-400"></span>
+            </h1>
+            <div class="max-w-sm text-center md:text-left">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+                    essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+                    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+                    versions of Lorem Ipsum.</p>
+            </div>
+            <div class="flex justify-ceenter md:justify-start">
+            <a href="" class="hidden md:block p-3 px-6 pt-2 text-white bg-indigo-500 shadow-lg shadow-indigo-500/50 rounded baseline hover:bg-indigo-700">Get Started</a>
+            </div>
+        </div>
+        <div>
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src='/lottie_files/97525-code-dark.json'  background="transparent"  speed="1" style="width: 600px; height: 600px;" loop autoplay></lottie-player>
+        </div>
+    </div>
+</section>
+
+<style>
+
+#spin:after {
+  content:"";
+  animation: spin infinite;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+}
+@keyframes spin {
+    25% { content:"Zain Qureshi,";}
+    50% { content:"Software Developer,";}
+    75% { content:"Photographer.";}
+}
+</style>
