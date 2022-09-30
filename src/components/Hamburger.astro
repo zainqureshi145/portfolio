@@ -1,0 +1,58 @@
+<div class="relative">
+  <!-- Hamburger Icon -->
+  <div class="hamburger-icon md:hidden mt-5 ml-2 flex items-start">
+    <button class="outline-none mobile-menu-button">
+      <svg
+        class="w-[45px] h-[45px] text-indigo-500"
+        x-show="!showMenu"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+  <!-- Hamburger Icon -->
+  <!-- Mobile Menu -->
+  <div class="hidden absolute mobile-menu z-10">
+    <div class="flex flex-col justify-center justify-items-center bg-indigo-100 dark:bg-orange-200 w-screen">
+      <!-- X Icon -->
+      <div class="cross-icon self-start mb-auto h-[45px] w-[45px] mt-5 ml-1 fill-white dark:fill-zinc-500">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+          <path
+            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+          ></path>
+        </svg>
+      </div>
+      <!-- X Icon Ends -->
+      <!-- Menu Items -->
+      <a href="index.html" class="text-center text-2xl px-2 py-4">Home</a>
+      <a href="projects.html" class="text-center text-2xl px-2 py-4">Projects</a>
+      <a href="education.html" class="text-center text-2xl px-2 py-4">Education</a>
+      <a href="blog.html" class="text-center text-2xl px-2 py-4">Blog</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Grab HTML Elements
+  const btn = document.querySelector("button.mobile-menu-button");
+  const menu = document.querySelector(".mobile-menu");
+  const hamburger = document.querySelector(".hamburger-icon");
+  const crossIcon = document.querySelector(".cross-icon");
+
+  // Add Event Listeners
+  btn.addEventListener("click", () => {
+    // menu.classList.toggle("hidden");
+    menu.classList.remove("hidden");
+    hamburger.classList.add("hidden");
+  });
+  crossIcon.addEventListener("click", () => {
+    menu.classList.add("hidden");
+    hamburger.classList.remove("hidden");
+  });
+</script>
