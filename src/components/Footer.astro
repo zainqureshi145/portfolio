@@ -1,6 +1,23 @@
+<div class="flex flex-row justify-center items-center w-auto">
   <footer>
-    <small>Copyright <span id="copyrightYear"></span> Zain Qureshi </small>
+    <div class="space-y-5">
+      <small class="flex flex-row justify-center text-black dark:text-slate-200 font-serif text-xs"
+        >Copyright &nbsp;<span class="oldstyle-nums text-xs copyrightYear"></span>&nbsp;&#169;&nbsp;Zain Qureshi</small
+      >
+      <!-- For Light Mode => Dark Logo -->
+      <div class="flex flex-col justify-center items-center">
+        <div class="flex flex-row justify-center space-x-5">
+          <div>
+            <img class="w-[50px] mt-4 invisible dark:visible" src="/logo/full-logo-dark.svg" alt="astro.build" />
+            <img class="w-[50px] -mt-4 visible dark:invisible" src="/logo/full-logo-light.svg" alt="astro.build" />
+          </div>
+          <img class="w-[40px]" src="/logo/Tailwind_CSS_Logo.svg" alt="tailwind-css" />
+          <img class="w-[25px]" src="/logo/icons8-react.svg" alt="react.js" />
+        </div>
+      </div>
+    </div>
   </footer>
-  <script>
-    document.querySelector('#copyrightYear').textContent = new Date().getFullYear().toString();
-  </script>
+</div>
+<script>
+  document.querySelector(".copyrightYear").textContent = new Date().getFullYear().toString();
+</script>

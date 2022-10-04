@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import ThemeToggleButton from "../components/ThemeToggle";
 import Hamburger from "../components/Hamburger.astro";
+import Footer from "../components/Footer.astro";
 export interface Props {
   title?: string;
 }
@@ -15,35 +16,38 @@ const { title } = Astro.props as Props;
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
 
     <title>{title}</title>
   </head>
   <body class="bg-white dark:bg-slate-900 dark:bg-gradient-to-r from-slate-900 to-slate-800">
-    <!-- <div class="flex flex-row justify-end sm:justify-between"> -->
-    <div class="flex flex-row justify-between">
-      <!-- Left Signature -->
-      <div class="hidden sm:flex mt-10 ml-3 animate-pulse animate-infinite">
-        <a href="index.html">
-          <img src="/logo/zq-transparent.png" class="h-20 w-20 hidden md:flex hover:translate-x-1 duration-1000" />
-        </a>
-      </div>
-      <!-- Left Signature End -->
-      <Hamburger />
-      <!-- Toggle Theme -->
-      <div class="toggle flex flex-row items-center">
-        <div class="animate-pulse animate-infinite">
-          <img src="/logo/ToggleTheme-Arrow.png" class="h-40 w-40 hidden md:flex" />
+    <main>
+      <!-- <div class="flex flex-row justify-end sm:justify-between"> -->
+      <div class="flex flex-row justify-between">
+        <!-- Left Signature -->
+        <div class="hidden sm:flex mt-10 ml-3 animate-pulse animate-infinite">
+          <a href="index.html">
+            <img src="/logo/zq-transparent.png" class="h-20 w-20 hidden md:flex hover:translate-x-1 duration-1000" />
+          </a>
         </div>
-        <!-- Toggle Theme Button -->
-        <div class="mr-3 mt-4 sm:mt-0">
-          <ThemeToggleButton client:load />
+        <!-- Left Signature End -->
+        <Hamburger />
+        <!-- Toggle Theme -->
+        <div class="toggle flex flex-row items-center">
+          <div class="animate-pulse animate-infinite">
+            <img src="/logo/ToggleTheme-Arrow.png" class="h-40 w-40 hidden md:flex" />
+          </div>
+          <!-- Toggle Theme Button -->
+          <div class="mr-3 mt-4 sm:mt-0">
+            <ThemeToggleButton client:load />
+          </div>
         </div>
       </div>
-    </div>
-    <Header />
+      <Header />
+      <slot />
+    </main>
     <slot />
   </body>
 </html>
